@@ -8,6 +8,13 @@
     <script type="module" src="./local-characters.js"></script>
 </head>
 <body>
-    
+    <div id="app">
+        <ul id="agent-list">
+            <li v-for="character in agentsData">
+                <p>{{character.name}}</p>
+                <img :src="'images/' + character.image_url" alt="Agent's Portrait">
+            </li>
+        </ul>
+    </div>
 </body>
 </html>

@@ -1,3 +1,38 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#app {
+    max-width: 1200px;
+}
+
+#agent-list {
+    text-align: left;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+}
+
+#agent-list li {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    background: rgb(238,41,202);
+    background: linear-gradient(0deg, rgba(238,41,202,1) 0%, rgba(145,8,238,1) 100%);
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+#agent-list p {
+    text-align: center;
+    margin: 5px;
+    color: #380762;
+    font-weight: bold;
+}
+
 #agent-list img {
     width: 100px;
+    justify-self: center;
+    align-self: center;
 }
+

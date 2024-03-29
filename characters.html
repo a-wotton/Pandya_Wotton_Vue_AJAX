@@ -9,21 +9,23 @@
     <script type="module" src="./local-characters.js"></script>
 </head>
 <body>
-    <div id="app">
+<div id="app">
     <div>
         <ul id="agent-list">
-            <li v-for="character in agentsData">
-                <p>{{character.name}}</p>
+            <!-- Added v-on:click here -->
+            <li v-for="character in agentsData" @click="getAgent(character.name)">
+                <p>{{ character.name }}</p>
                 <img :src="'images/' + character.image_url" alt="Agent's Portrait">
             </li>
         </ul>
     </div>
-    <div v-if="agentDetails"> <!--Agent deatils will show here-->
+    <!-- Display agent details -->
+    <div v-if="agentDetails">
         <h2>{{ agentDetails.agentName }}</h2>
         <p><strong>Role:</strong> {{ agentDetails.role }}</p>
         <p><strong>Description:</strong> {{ agentDetails.description }}</p>
     </div>
     <p v-if="error">{{ error }}</p>
-</div> 
+</div>
 </body>
 </html>

@@ -1,6 +1,6 @@
 const agents = Vue.createApp({
     created() {
-        console.log("Created hook is called")
+        console.log("Created hook is called");
         fetch("http://localhost/Pandya_Wotton_Vue_AJAX/lumen/public/agents")
           .then(res => {
             if (!res.ok) {
@@ -21,8 +21,8 @@ const agents = Vue.createApp({
     data() {
         return {
             agentsData: [],
-            agentDetails: {}, // agent deatils
-            error: "Sorry we cant connect at this moment", // Error message if it fails to load
+            agentDetails: {}, 
+            error: "Sorry we can't connect at this moment", 
         }
     },
 
@@ -30,13 +30,14 @@ const agents = Vue.createApp({
       
         getAgent(agentName) {
             let name = agentName.trim();
-        
             
-            let agentData = this.agentsData.find(agent => agent.name === name);
+            let agentData = this.agentsData.find(agent => agent.name.toLowerCase() === name.toLowerCase());
         
             if (agentData) {
+                const uuid = agentData.uuid; 
                 
-                fetch(`https://valorant-api.com/v1/agents?name=${encodeURIComponent(name)}`)
+                
+                fetch(`https://valorant-api.com/v1/agents/${uuid}`)
                     .then(res => {
                         if (!res.ok) {
                             throw new Error('Network response was not ok');
@@ -44,14 +45,14 @@ const agents = Vue.createApp({
                         return res.json();
                     })
                     .then(data => {
-                        if (data.status === 200 && data.data.length > 0) {
-                            
-                            const agent = data.data[0];
-                            this.error = "Nothing to show";
+                        if (data.status === 200 && data.data) {
+                            const agent = data.data;
+                            this.error = ""; 
                             this.agentDetails = {
                                 agentName: agent.displayName,
                                 role: agent.role.displayName,
                                 description: agent.description,
+                            
                             };
                         } else {
                             this.error = "Failed to fetch agent details. Try again.";
@@ -65,9 +66,6 @@ const agents = Vue.createApp({
                 this.error = "Agent not found in local data.";
             }
         }
-        
-   
     }
 
-})
-agents.mount("#app")
+}).mount("#app");

@@ -9,7 +9,7 @@ use App\Models\Character;
 class CharacterController extends Controller {
 
     public function getAll() {
-        $characters = Character::select('name','image_url','role')
+        $characters = Character::select('name','image_url','role','uuid')
         ->get();
         return response()->json($characters);
     }

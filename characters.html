@@ -10,6 +10,7 @@
 </head>
 <body>
     <div id="app">
+    <div>
         <ul id="agent-list">
             <li v-for="character in agentsData">
                 <p>{{character.name}}</p>
@@ -17,5 +18,12 @@
             </li>
         </ul>
     </div>
+    <div v-if="agentDetails"> <!--Agent deatils will show here-->
+        <h2>{{ agentDetails.agentName }}</h2>
+        <p><strong>Role:</strong> {{ agentDetails.role }}</p>
+        <p><strong>Description:</strong> {{ agentDetails.description }}</p>
+    </div>
+    <p v-if="error">{{ error }}</p>
+</div> 
 </body>
 </html>

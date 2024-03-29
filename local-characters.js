@@ -15,7 +15,6 @@ const agents = Vue.createApp({
     data() {
         return {
             agentsData: [],
-            imageUrl: "",
         }
     },
 })

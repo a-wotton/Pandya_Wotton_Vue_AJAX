@@ -52,6 +52,8 @@ const agents = Vue.createApp({
                                 agentName: agent.displayName,
                                 role: agent.role.displayName,
                                 description: agent.description,
+                                abilities: agent.abilities,
+                                fullPortraitV2: agent.fullPortraitV2,
                             
                             };
                         } else {

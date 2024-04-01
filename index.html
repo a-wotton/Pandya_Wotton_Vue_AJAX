@@ -37,7 +37,7 @@
         </div>
     </div>
     <div class="agent-image">
-        <img :src="agentDetails.fullPortraitV2" alt="Full Portrait V2">
+        <img v-if="agentDetails.fullPortraitV2" :src="agentDetails.fullPortraitV2" alt="Full Portrait V2">
     </div>
   
     <p v-if="error">{{ error }}</p>

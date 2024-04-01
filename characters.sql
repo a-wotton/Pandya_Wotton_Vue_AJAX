@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Apr 01, 2024 at 08:29 PM
+-- Generation Time: Apr 01, 2024 at 08:51 PM
 -- Server version: 5.7.39
 -- PHP Version: 8.2.0
 
@@ -53,8 +53,7 @@ INSERT INTO `characters` (`id`, `name`, `image_url`, `role`, `uuid`) VALUES
 (12, 'Raze', 'raze-portrait.png', 'Duelist', 'f94c3b30-42be-e959-889c-5aa313dba261'),
 (13, 'Skye', 'skye-portrait.png', 'Initiator', '6f2a04ca-43e0-be17-7f36-b3908627744d'),
 (14, 'Yoru', 'yoru-portrait.png', 'Duelist', '7f94d92c-4234-0a36-9646-3a87eb8b5c89'),
-(15, 'Astra', 'astra-portrait.png', 'Controller', '41fb69c1-4189-7b37-f117-bcaf1e96f1bf'),
-(16, 'Gekko ', 'gekko-portrait.png', 'Initator', 'e370fa57-4757-3604-3648-499e1f642d3f');
+(15, 'Astra', 'astra-portrait.png', 'Controller', '41fb69c1-4189-7b37-f117-bcaf1e96f1bf');
 
 --
 -- Indexes for dumped tables

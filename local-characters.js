@@ -1,7 +1,7 @@
 const agents = Vue.createApp({
     created() {
         console.log("Created hook is called");
-        fetch("http://localhost/Pandya_Wotton_Vue_AJAX/lumen/public/agents")
+        fetch("http://localhost:8888/Pandya_Wotton_Vue_AJAX/lumen/public/agents")
           .then(res => {
             if (!res.ok) {
               throw new Error('Network response was not ok');
